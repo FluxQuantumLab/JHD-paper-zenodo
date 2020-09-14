@@ -42,12 +42,16 @@ def getH(param):
 def minimize(x,*args):
     """ Returns excitation energy between ground state and first excited state. Use this for minimization routine SHGO.
     Parameters:
-        - x are the optimization parameters, which are changed by SHGO routine
-        - *args are the other fixed paramters
+        - x are the optimization parameters, which are changed by SHGO routine. x=[ng1,ng2,phiX]
+        - *args are the other fixed paramters. args=[N,Ej,Ec,asym]
     """
-    phiX,ng1,ng2=x
-    [N,Ej,Ec,asym]=args
+    ng1,ng2,phiX=x
+
+    #reshape (1,N) into (N) for shgo algorithm
+    args=np.array(args).reshape(np.shape(args)[-1]) 
+    [N,Ej,Ec,asym,tol]=args
+    
     param=[N,Ej,Ec,ng1,ng2,phiX,asym]
 
-    E,V=topo.compute_ev(getH(param), nbands=2)
+    E,V=topo.compute_ev(getH(param), nbands=2, tol=tol)
     return E[1]-E[0]
