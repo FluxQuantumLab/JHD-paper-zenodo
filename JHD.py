@@ -50,9 +50,8 @@ def getdH_LR(param):
 
     dphiL=-asym[3]*(Ej/(2*1j))*( np.exp(-1j*phiL)*spa.kron(cp,idn) - np.exp(1j*phiL)*spa.kron(cm,idn) )
     dphiR=+asym[4]*(Ej/(2*1j))*( np.exp(1j*phiR)*spa.kron(idn,cp) - np.exp(-1j*phiR)*spa.kron(idn,cm) )
-    dphiB=-asym[2]*(Ej/(2*1j))*( np.exp(-1j*phiB)*spa.kron(cm,cp) - np.exp(1j*phiB)*spa.kron(cp,cm) )
 
-    return [dphiL, dphiR, dphiB]
+    return [dphiL, dphiR]
 
 
 def getdH_full(param):
