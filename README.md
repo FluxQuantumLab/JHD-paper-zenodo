@@ -1,8 +1,7 @@
-# JHD-paper-zenodo
+# Transconductance quantization in a topological Josephson tunnel junction circuit
+By Léo Peyruchat, Joël Griesmar, Jean-Damien Pillet, Çağlar Girit
 
-Python source code to generate data in https://arxiv.org/abs/2009.03291
-
-Python version used: 3.7.3
+Python source code to generate data from https://arxiv.org/abs/2009.03291
 
 The code is separated in two parts: python libraries containing generic functions, and jupyter notebook files to generate and display data shown in the article.
 
@@ -16,4 +15,18 @@ Jupyter Notebook files: one .ipynb file is associated to each figure. It contain
 * pre-generated data stored in fig*_data, used for the article figures
 * display of the plot as in the article
 
-The conda configuration with all packages versions can be found in package_zenodo.txt
+The conda configuration, with all the packages used for this work, can be installed following these instructions:
+
+* install [miniconda](http://conda.pydata.org/miniconda.html)
+* install all dependencies with
+```
+conda env create -f environment.yml
+```
+* activate new conda env
+```
+source activate JHD
+```
+* open jupyter lab
+```
+jupyter-lab
+```
