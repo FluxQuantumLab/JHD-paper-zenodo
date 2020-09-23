@@ -16,8 +16,4 @@ Jupyter Notebook files: one .ipynb file is associated to each figure. It contain
 * pre-generated data stored in fig*_data, used for the article figures
 * display of the plot as in the article
 
-Packages version used:
-* numpy 1.19.1
-* scipy 1.5.1
-* jupyter 1.0.0
-* jupyterlab 2.1.5
+The conda configuration with all packages versions can be found in package_zenodo.txt
